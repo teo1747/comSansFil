@@ -22,6 +22,10 @@ private slots:
 
     void on_Mise_a_jour_clicked();
 
+    void on_Select_clicked();
+
+    void on_Payer_clicked();
+
 
 
 
