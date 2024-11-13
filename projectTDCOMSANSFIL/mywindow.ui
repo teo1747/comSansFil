@@ -292,7 +292,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>This application shows the fonctioning of an electronique wallet </string>
+     <string>This application shows the fonctioning of an electronic wallet </string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -306,6 +306,19 @@
     </property>
     <property name="text">
      <string>on a MIFARE classic 1K</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Pic_1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>70</y>
+      <width>361</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>image</string>
     </property>
    </widget>
   </widget>

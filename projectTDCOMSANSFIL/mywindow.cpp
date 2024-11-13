@@ -18,6 +18,17 @@ mYWindow::mYWindow(QWidget *parent)
     , ui(new Ui::mYWindow)
 {
     ui->setupUi(this);
+
+
+    // Image 1
+    // addresse de l'image  .
+    QPixmap pix(":/image/lil durk mugshot.jpg");
+
+    // longueur largeur de l'image .
+    int x =ui->Pic_1->width();
+    int y =ui->Pic_1->height();
+    // l'image ne se  deforme pas
+    ui->Pic_1->setPixmap(pix.scaled(x,y,Qt::KeepAspectRatio));
 }
 
 mYWindow::~mYWindow()
@@ -107,7 +118,7 @@ void mYWindow::on_Select_clicked(){
                 if(data[i] == 0){
                     break;
                 }
-                prenom.append(QChar(data[i]));
+                prenom.append((char)(data[i]));
             }
             ui->Surname->setText(prenom);
         }else{
@@ -122,7 +133,7 @@ void mYWindow::on_Select_clicked(){
                 if(data[i] == 0){
                     break;
                 }
-                nom.append(QChar(data[i]));
+                nom.append((char)(data[i]));
             }
             ui->Name->setText(nom);
         }else{
@@ -181,7 +192,8 @@ void mYWindow::on_Charger_clicked(){
     uint32_t pvalue = 0;
 
     uint32_t Valeur_Increment = 0;
-    Valeur_Increment = ui->Decrementer_Unite->value();
+
+    Valeur_Increment = ui->Increment_Unite->value();
     ISO14443_3_A_PollCard(&MonLecteur, atq, sak, uid, &uid_len);
     Mf_Classic_Increment_Value(&MonLecteur, TRUE, 14, Valeur_Increment, 13, AuthKeyB, 3);
     Mf_Classic_Restore_Value(&MonLecteur, TRUE, 13, 14, AuthKeyB, 3);
