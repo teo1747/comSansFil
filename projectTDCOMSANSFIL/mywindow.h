@@ -26,6 +26,8 @@ private slots:
 
     void on_Payer_clicked();
 
+    void on_Charger_clicked();
+
 
 
 

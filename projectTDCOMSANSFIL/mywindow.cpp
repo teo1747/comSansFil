@@ -159,7 +159,36 @@ void mYWindow::on_Payer_clicked(){
     LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON);
 
 
+}
+
+void mYWindow::on_Charger_clicked(){
+
+    uint8_t atq[2];
+    uint8_t sak[1];
+    uint8_t uid[12];
+    uint16_t uid_len = 12;
+    uint32_t pvalue = 0;
+
+    uint32_t Valeur_Increment = 0;
+    Valeur_Increment = ui->Decrementer_Unite->value();
+    ISO14443_3_A_PollCard(&MonLecteur, atq, sak, uid, &uid_len);
+    Mf_Classic_Increment_Value(&MonLecteur, TRUE, 14, Valeur_Increment, 13, AuthKeyB, 3);
+    Mf_Classic_Restore_Value(&MonLecteur, TRUE, 13, 14, AuthKeyB, 3);
+    Mf_Classic_Read_Value(&MonLecteur, TRUE, 14, &pvalue, AuthKeyA, 3);
+    ui->Nombre_Unite->setText(QString::number(pvalue));
+
+
+
+    LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON+LED_RED_ON+LED_GREEN_ON);
+    DELAYS_MS(500);
+    LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON);
+
 
 
 }
+
+
+
+
+
 
