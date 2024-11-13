@@ -5,9 +5,9 @@
 #include "Sw_Device.h"
 #include "Sw_Mf_Classic.h"
 #include "Tools.h"
-#include "TypeDefs.h"
+//#include "TypeDefs.h"
 #include "Sw_ISO14443A-3.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 
 
@@ -61,7 +61,7 @@ void mYWindow::on_Disconnect_clicked(){
 
 void mYWindow::on_Mise_a_jour_clicked(){
 
-    uint16_t status = MI_OK;
+    //uint16_t status = MI_OK;
     uint8_t atq[2];
     uint8_t sak[1];
     uint8_t uid[12];
@@ -130,7 +130,18 @@ void mYWindow::on_Select_clicked(){
         }
 
         status = Mf_Classic_Read_Value(&MonLecteur, TRUE, 14, &pvalue, AuthKeyA, 3);
-        ui->Nombre_Unite->setText(QString::number(pvalue));
+        if(status == MI_OK){
+            ui->Nombre_Unite->setText(QString::number(pvalue));
+
+        }else{
+            qDebug() << "error: Could not read your Card";
+        }
+
+
+
+        LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON+LED_RED_ON+LED_GREEN_ON);
+        DELAYS_MS(500);
+        LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON);
 
     }
 
@@ -184,9 +195,18 @@ void mYWindow::on_Charger_clicked(){
     LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON);
 
 
-
 }
 
+void mYWindow::on_Close_clicked(){
+
+    LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON+LED_RED_ON+LED_GREEN_ON);
+    DELAYS_MS(10);
+    LEDBuzzer(&MonLecteur, LED_GREEN_ON+LED_YELLOW_ON);
+
+    qApp->quit();
+
+
+}
 
 
 

@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>connect</string>
+     <string>Connect</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="Affichage">
@@ -33,7 +33,7 @@
       <x>3</x>
       <y>510</y>
       <width>241</width>
-      <height>71</height>
+      <height>61</height>
      </rect>
     </property>
    </widget>
@@ -60,7 +60,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string>Identity</string>
     </property>
     <widget class="QTextEdit" name="Name">
      <property name="geometry">
@@ -145,7 +145,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string>Decrement  Wallet  Value</string>
     </property>
     <widget class="QPushButton" name="Payer">
      <property name="geometry">
@@ -217,7 +217,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string>Increment  Wallet  Value</string>
     </property>
     <widget class="QPushButton" name="Charger">
      <property name="geometry">
@@ -269,16 +269,45 @@
      <string>Close</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>18</height>
-    </rect>
-   </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>My Wallet </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>661</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>This application shows the fonctioning of an electronique wallet </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>251</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>on a MIFARE classic 1K</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

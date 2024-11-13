@@ -28,6 +28,8 @@ private slots:
 
     void on_Charger_clicked();
 
+    void on_Close_clicked();
+
 
 
 
