@@ -22,13 +22,23 @@ mYWindow::mYWindow(QWidget *parent)
 
     // Image 1
     // addresse de l'image  .
-    QPixmap pix(":/image/lil durk mugshot.jpg");
+    QPixmap pix(":/image/mambo.jpg");
 
     // longueur largeur de l'image .
     int x =ui->Pic_1->width();
     int y =ui->Pic_1->height();
     // l'image ne se  deforme pas
     ui->Pic_1->setPixmap(pix.scaled(x,y,Qt::KeepAspectRatio));
+
+    QPixmap pix1(":/image/mambo.jpg");
+
+    // longueur largeur de l'image .
+    int x1 =ui->Pic_1->width();
+    int y1 =ui->Pic_1->height();
+    // l'image ne se  deforme pas
+    ui->Pic_2->setPixmap(pix1.scaled(x1,y1,Qt::KeepAspectRatio));
+
+
 }
 
 mYWindow::~mYWindow()

@@ -321,6 +321,19 @@
      <string>image</string>
     </property>
    </widget>
+   <widget class="QLabel" name="Pic_2">
+    <property name="geometry">
+     <rect>
+      <x>696</x>
+      <y>10</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>image2</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
